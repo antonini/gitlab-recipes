@@ -498,9 +498,6 @@ If you can't start the service because you receive a message `Starting unicorn: 
     ln -s $ruby_bin_path/bundle /sbin/bundle
     ln -s $ruby_bin_path/ruby_noexec_wrapper /sbin/ruby_noexec_wrapper
 
-Please go over to your profile page and immediately change the password, so
-nobody can access your GitLab by using this login information later on.
-
 ## Check Application Status
 
 Check if GitLab and its environment is configured correctly:
