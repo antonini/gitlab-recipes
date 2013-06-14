@@ -480,6 +480,27 @@ Start your GitLab instance:
     # or
     /etc/init.d/gitlab start
 
+**Important Note:**
+If you can't start the service because you receive a message `Starting unicorn: bash: bundle: command not found` run the following commands:
+
+*logged in as **root***
+
+    ruby_bin_path=$(dirname $(which bundle))
+    gems=$(dirname $(which gem))
+    ln -s $gems/erb /sbin/erb
+    ln -s $gems/gem /sbin/gem
+    ln -s $gems/irb /sbin/irb
+    ln -s $gems/rake /sbin/rake
+    ln -s $gems/rdoc /sbin/rdoc
+    ln -s $gems/ri /sbin/ri
+    ln -s $gems/ruby /sbin/ruby
+    ln -s $gems/testrb /sbin/testrb
+    ln -s $ruby_bin_path/bundle /sbin/bundle
+    ln -s $ruby_bin_path/ruby_noexec_wrapper /sbin/ruby_noexec_wrapper
+
+Please go over to your profile page and immediately change the password, so
+nobody can access your GitLab by using this login information later on.
+
 ## Check Application Status
 
 Check if GitLab and its environment is configured correctly:
